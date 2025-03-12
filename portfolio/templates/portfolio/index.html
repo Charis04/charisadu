@@ -1,53 +1,6 @@
+{% extends "portfolio/layout.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Charis' Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-<link href="{% static 'portfolio/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.1.0/css/glightbox.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="{% static 'portfolio/main.css' %}" rel="stylesheet">
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex flex-column justify-content-center">
-
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Certificaitons</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
-      </ul>
-    </nav>
-
-  </header>
-
+{% block content %}
   <main class="main">
 
     <!-- Hero Section -->
@@ -59,7 +12,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <h2>Charis Adu</h2>
-            <p>I'm a <span class="typed" data-typed-items="Software Engineer, Data Scientist, Freelancer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p>I'm <span class="typed" data-typed-items="a Software Engineer, a Data Scientist, a Freelancer, Batman"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             <div class="social-links">
                 <a href="https://x.com/Charis_sensei" target="_blank"><i class="bi bi-twitter-x"></i></a>
               <a href="https://github.com/Charis04" target="_blank"><i class="bi bi-github"></i></a>
@@ -77,7 +30,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>Hi, I'm Charis Adu, a passionate Software Engineer and Data Scientist based in Lagos, Nigeria. With a strong background in data analysis, I’ve spent the past three years honing my skills in data analytics, machine learning, and web development.</p>
+        <p>Hi, I'm Charis Adu, a Software Engineer and Data Scientist based in Lagos, Nigeria. I’ve spent the past three years honing my skills in data analytics, machine learning, and web development.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -422,99 +375,48 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-branding"> Software Engineering</li>
             <li data-filter=".filter-app">Data Analysis</li>
-            <li data-filter=".filter-product">Data Science</li>
-            <li data-filter=".filter-branding"> Web Dev</li>
+            <!--<li data-filter=".filter-product">Data Science</li>-->
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'portfolio/menstrual.png' %}" class="img-fluid" alt="">
+            {% for project in projects %}
+              {% if project.category == 'Data Analysis' %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="{{ project.image1 }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Determinants of Menstrual Hygiene Practice Among Secondary School Students</h4>
-                <a href="{% static 'portfolio/menstrual.png' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/Charis04/Determinants-of-menstrual-hygiene-practices" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ project.title }}</h4>
+                <a href="{{ project.image1 }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
+              <a href="{% url 'project' project.id %}" title="More Details" class="stretched-link"><i class="bi bi-link-45deg"></i></a>
+              </div><!-- End Portfolio Item -->
+              {% endif %}
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+              {% if project.category == 'Software Engineering' %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <img src="{{ project.image1 }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Brotherly</h4>
+                  <a href="{% static 'portfolio/project.image1' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+                <a href="{% url 'project' project.id %}" title="More Details" class="stretched-link"><i class="bi bi-link-45deg" ></i></a>
+              </div><!-- End Portfolio Item -->
+              {% endif %}
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'portfolio/Brotherly.png' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Brotherly</h4>
-                <a href="{% static 'portfolio/Brotherly.png' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/Charis04/Brotherly" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'portfolio/covid.png' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Assesment of COVID-19 Vaccine Booster Dose Uptake Among Health Workers In Urban and Rural Areas</h4>
-                <a href="{% static 'portfolio/covid.png' %}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/Charis04/Assessment-of-Covid-19-Booster-Dose-Uptake" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+              {% if project.category == 'Data Science' %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 1</h4>
+                  <p>Lorem ipsum, dolor sit</p>
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div><!-- End Portfolio Item -->
+              {% endif %}
+            {% endfor %}
 
           </div><!-- End Portfolio Container -->
 
@@ -603,7 +505,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Don't take my word for it. Listen to my clients and colleagues</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -738,46 +640,4 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <h3 class="sitename">Charis Adu</h3>
-      <p></p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/Charis_sensei" target="_blank"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://github.com/Charis04" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/charisadu/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Charis Adu</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          Credits <a href="https://bootstrapmade.com/">BootstrapMade</a><a href="https://themewagon.com">ThemeWagon</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-<script src="{% static 'portfolio/purecounter/purecounter_vanilla.js' %}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-<script src="{% static 'portfolio/glightbox/js/glightbox.min.js' %}"></script>
-<script src="{% static 'portfolio/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-<script src="{% static 'portfolio/isotope-layout/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'portfolio/swiper/swiper-bundle.min.js' %}"></script>
-
-  <!-- Main JS File -->
-  <script src="{% static 'portfolio/main.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}

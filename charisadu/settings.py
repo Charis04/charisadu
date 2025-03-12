@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'www.charisadu.tech',
     'charisadu.tech',
+    '127.0.0.1',
 ]
 
 
