@@ -6,6 +6,10 @@ def home(request):
     projects = Project.objects.all()
     return render(request, 'portfolio/index.html', {'projects': projects})
 
+def dev_home(request):
+    projects = Project.objects.all()
+    return render(request, 'portfolio/dev_index.html', {'projects': projects})
+
 def project(request, id):
     project = Project.objects.get(id=id)
     print(project)

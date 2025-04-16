@@ -1,0 +1,495 @@
+{% extends "portfolio/layout.html" %}
+{% load static %}
+{% block home %}<a href="{% url 'dev-home' %}" class="active">{% endblock %}
+{% block content %}
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="{% static 'portfolio/Banner.jpg' %}" alt="">
+
+      <div class="container" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>Charis Adu</h2>
+            <p>I'm <span class="typed" data-typed-items="a Software Engineer, Batman"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+                <a href="https://x.com/Charis_sensei" target="_blank"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://github.com/Charis04" target="_blank"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/charisadu/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Hi, I'm Charis Adu, a Software Engineer based in Lagos, Nigeria. I’ve spent the past two years honing my skills in web development.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="{% static 'portfolio/profile-img.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Software Engineer</h2>
+            <p class="fst-italic py-3">
+              "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."
+            </p>
+            <p class="py-3">
+              Over the past few years, I’ve worked on a diverse range of projects—from building an eCommerce platform that connects users to nearby vendors (ShopHive), to crafting a relationship management app (Brotherly) that helps people stay connected to loved ones. I’ve collaborated with cross-functional teams, contributed to open-source projects, and developed production-ready APIs with tools like Flask, Python, SQL, and JavaScript.
+
+              I have a solid understanding of backend systems, API design, authentication, and database optimization. I’m also experienced with version control, Agile workflows, and the full software development lifecycle.
+
+              Beyond code, I enjoy working on meaningful projects that impact people positively. I'm always open to new challenges and opportunities to grow as an engineer.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Here are some of my top skills</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="container skill-title" data-aos="fade-up">
+          <h3>Software Engineering Skills</h3>
+        </div><!-- End Section Title -->
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Python</span> <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>JavaScript</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Database Management (SQL, MongoDB)</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Flask</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Django</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Node</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>C</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>HTML &amp; CSS</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>DevOps</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Cloud Computing (AWS)</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Artificial Intelligence</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Mobile Development</span> <i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Here's a little bit more about my educational background and professional work experience.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Charis Adu</h4>
+              <p><em>Versatile Software Engineer and Data Scientist with a strong foundation in data analytics, web development, and machine learning. Experienced in building full-stack applications, managing backend processes, and delivering data-driven insights to support strategic decision-making. Proven track record of collaborating on diverse projects, including public health research, financial modeling, and e-commerce platforms. Adept at working in Agile environments, with expertise in Python, SQL, Flask, and modern JavaScript frameworks.</em></p>
+              <ul>
+                <li>Hillcrest Estate, Ogundimu st, Iju Ishaga, Lagos State, Nigeria</li>
+                <li>(+234) 09025192483</li>
+                <li>charisadu@gmail.com</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>ALX Software Engineering</h4>
+              <h5>2023 - 2025</h5>
+              <p><em>ALX Africa x Holberton School</em></p>
+              <p>Relevant Coursework: DevOps; Systems Engineering; Python; C; Ruby; Shell; Git; Linux; Node; Flask; JQuery; Express JS Object-Oriented Programming; Test-driven Development; Data Structures and Algorithms; HTML; CSS; JavaScript; SQL; MySQL; ORM; Database; Networking; Web Servers.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Bachelor of Anatomy</h4>
+              <h5>2017 - 2022</h5>
+              <p><em>University of Ilorin – Ilorin, Nigeria</em></p>
+              <p>CGPA: 3.83 (Second Class Upper)</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Backend Developer</h4>
+              <h5>2024 - 2025</h5>
+              <p><em>ShopHive NG - Lagos, Nigeria</em></p>
+              <ul>
+                <li>Developed and implemented order management features, ensuring seamless processing of customer purchases.</li>
+                <li>Reviewed and merged pull requests, maintaining high code quality and adherence to best practices.</li>
+                <li>Collaborated with a team of backend developers to build and optimize the eCommerce platform using Flask.</li>
+                <li>Designed and maintained RESTful APIs for product listings, orders, and user authentication.</li>
+                <li>Improved database queries and backend logic for enhanced performance and scalability.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Here are the projects I've worked on</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-branding"> Web</li>
+            <li data-filter=".filter-app">Desktop</li>
+            <!--<li data-filter=".filter-product">Data Science</li>-->
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            {% for project in projects %}
+              {% if project.category == 'Desktop' %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="{{ project.image1 }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ project.title }}</h4>
+                <a href="{{ project.image1 }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+              <a href="{% url 'project' project.id %}" title="More Details" class="stretched-link"><i class="bi bi-link-45deg"></i></a>
+              </div><!-- End Portfolio Item -->
+              {% endif %}
+
+              {% if project.category == 'Software Engineering' %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <img src="{{ project.image1 }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{ project.title }}</h4>
+                  <a href="{{ project.image1 }}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+                <a href="{% url 'project' project.id %}" title="More Details" class="stretched-link"><i class="bi bi-link-45deg" ></i></a>
+              </div><!-- End Portfolio Item -->
+              {% endif %}
+
+              {% if project.category == 'Data Science' %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 1</h4>
+                  <p>Lorem ipsum, dolor sit</p>
+                  <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div><!-- End Portfolio Item -->
+              {% endif %}
+            {% endfor %}
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Certificaitons Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certificaitons</h2>
+        <p>Here are some of the Certificaitons I've earned over the years</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <!-- Removed 'col-lg-4' class from service item because there are only 2 certs-->
+          <div class=" col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <img src="{% static 'portfolio/Alx-cert.png' %}" class="img-fluid" alt="">
+              <a href="#" class="stretched-link">
+                <h3>ALX Software Engineering</h3>
+              </a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class=" col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <img src="{% static 'portfolio/CS50P-cert.png' %}" class="img-fluid" alt="">
+              <a href="#" class="stretched-link">
+                <h3>CS50 Python</h3>
+              </a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>Don't take my word for it. Listen to my clients and colleagues</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Charis is more than just technically skilled, He's an incredibly responsive and patient individual always fostering a collaborative environment and willing to answer questions and explain concepts in a clear and concise way. I never felt hesitant asking for help or dedicating a task to him at any point in time, knowing he'd patiently guide me through any challenges I faced and always right in time to deliver.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                      <h3>Dr Abraham Ogwuche</h3>
+                      <h4>Data Scientist</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>For further enqueries, feel free to reach out to me</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Ogundimu Street, Iju Ishaga, Lagos State, Nigeria</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+234 902 519 2483</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>charisadu@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+{% endblock %}
